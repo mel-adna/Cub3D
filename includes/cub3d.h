@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-adna <mel-adna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:32:17 by mel-adna          #+#    #+#             */
-/*   Updated: 2025/08/03 13:37:47 by mel-adna         ###   ########.fr       */
+/*   Updated: 2025/08/04 13:16:54 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
-# include <unistd.h>
 
 # define WIN_WIDTH 640
 # define WIN_HEIGHT 480

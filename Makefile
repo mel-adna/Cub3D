@@ -25,7 +25,7 @@ SRCS = \
 	parcing/init_player_dir.c \
 	parcing/parcing_utils.c \
 	parcing/parse_data.c \
-	free_game.c \
+	parcing/free_game.c \
 	render/render_init.c \
 	render/render_drawing.c \
 	render/render_textures.c \
