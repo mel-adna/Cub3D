@@ -6,7 +6,7 @@
 /*   By: mel-adna <mel-adna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:32:17 by mel-adna          #+#    #+#             */
-/*   Updated: 2025/08/03 13:37:47 by mel-adna         ###   ########.fr       */
+/*   Updated: 2025/08/04 15:38:09 by mel-adna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,6 +175,7 @@ typedef struct s_game
 	int				bpp;
 	int				size_line;
 	int				endian;
+	bool			window_focused;
 }					t_game;
 
 // Raycasting structures
@@ -288,5 +289,7 @@ void				fill_default_texture(int *texture);
 bool				allocate_texture_memory(t_game *game);
 void				draw_minimap(t_game *game);
 int					mouse_move(int x, int y, t_game *game);
+int					on_focus_out(t_game *game);
+int					on_focus_in(t_game *game);
 
 #endif

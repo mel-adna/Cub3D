@@ -6,7 +6,7 @@
 /*   By: mel-adna <mel-adna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 13:33:17 by mel-adna          #+#    #+#             */
-/*   Updated: 2025/08/03 13:44:00 by mel-adna         ###   ########.fr       */
+/*   Updated: 2025/08/04 16:31:11 by mel-adna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,13 @@ bool	is_wall_collision(float x, float y, t_game *g)
 
 int	mouse_move(int x, int y, t_game *game)
 {
-	int	center_x;
-	int	delta_x;
+	static int	last_x = -1;
+	int			delta_x;
 
-	center_x = WIDTH / 2;
-	delta_x = x - center_x;
+	if (last_x == -1)
+		last_x = x;
+	delta_x = x - last_x;
+	last_x = x;
 	if (delta_x != 0)
 	{
 		game->player.angle += delta_x * 0.002;
@@ -78,7 +80,6 @@ int	mouse_move(int x, int y, t_game *game)
 			game->player.angle += 2 * PI;
 		else if (game->player.angle > 2 * PI)
 			game->player.angle -= 2 * PI;
-		mlx_mouse_move(game->win, center_x, y);
 	}
 	(void)y;
 	return (0);

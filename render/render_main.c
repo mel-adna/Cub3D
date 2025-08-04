@@ -6,7 +6,7 @@
 /*   By: mel-adna <mel-adna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:29:49 by mel-adna          #+#    #+#             */
-/*   Updated: 2025/08/03 13:43:33 by mel-adna         ###   ########.fr       */
+/*   Updated: 2025/08/04 16:22:56 by mel-adna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,28 +34,38 @@ void	render_scene(t_game *game)
 	mlx_put_image_to_window(game->mlx, game->win, game->img, 0, 0);
 }
 
+static void	update_angle(t_player *p, int delta_x)
+{
+	p->angle += delta_x * 0.002;
+	if (p->angle < 0)
+		p->angle += 2 * PI;
+	else if (p->angle > 2 * PI)
+		p->angle -= 2 * PI;
+}
+
 void	update_player_angle_and_position(t_game *game)
 {
-	t_player	*p;
-	int			center_x;
-	int			delta_x;
+	static int	last_mouse_x = -1;
 	int			mouse_x;
 	int			mouse_y;
+	int			delta_x;
 
-	p = &game->player;
-	center_x = WIDTH / 2;
-	mlx_mouse_get_pos(game->win, &mouse_x, &mouse_y);
-	delta_x = mouse_x - center_x;
-	if (delta_x != 0)
+	if (game->window_focused)
 	{
-		p->angle += delta_x * 0.002;
-		if (p->angle < 0)
-			p->angle += 2 * PI;
-		else if (p->angle > 2 * PI)
-			p->angle -= 2 * PI;
-		mlx_mouse_move(game->win, center_x, mouse_y);
+		mlx_mouse_get_pos(game->win, &mouse_x, &mouse_y);
+		if (mouse_x >= 0 && mouse_x < WIDTH && mouse_y >= 0 && mouse_y < HEIGHT)
+		{
+			if (last_mouse_x == -1)
+				last_mouse_x = mouse_x;
+			delta_x = mouse_x - last_mouse_x;
+			last_mouse_x = mouse_x;
+			if (delta_x)
+				update_angle(&game->player, delta_x);
+		}
+		else
+			last_mouse_x = -1;
 	}
-	move_player(p, game);
+	move_player(&game->player, game);
 }
 
 int	draw_loop(t_game *game)

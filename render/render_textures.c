@@ -6,7 +6,7 @@
 /*   By: mel-adna <mel-adna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:30:34 by mel-adna          #+#    #+#             */
-/*   Updated: 2025/08/03 13:43:48 by mel-adna         ###   ########.fr       */
+/*   Updated: 2025/08/04 15:58:25 by mel-adna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,16 @@ void	load_textures(t_game *game)
 		copy_texture_data(game, texture_imgs, i);
 		i++;
 	}
+}
+
+int	on_focus_in(t_game *game)
+{
+	game->window_focused = true;
+	return (0);
+}
+
+int	on_focus_out(t_game *game)
+{
+	game->window_focused = false;
+	return (0);
 }
