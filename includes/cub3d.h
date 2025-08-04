@@ -6,7 +6,7 @@
 /*   By: mel-adna <mel-adna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:32:17 by mel-adna          #+#    #+#             */
-/*   Updated: 2025/08/04 15:38:09 by mel-adna         ###   ########.fr       */
+/*   Updated: 2025/08/04 17:08:34 by mel-adna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
-# include <unistd.h>
 
 # define WIN_WIDTH 640
 # define WIN_HEIGHT 480

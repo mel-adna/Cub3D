@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-adna <mel-adna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/03 20:51:12 by mel-adna          #+#    #+#             */
-/*   Updated: 2025/08/03 20:51:14 by mel-adna         ###   ########.fr       */
+/*   Created: 2025/07/27 12:07:11 by szemmour          #+#    #+#             */
+/*   Updated: 2025/08/04 13:12:41 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,10 @@ int	parser(t_game *game, char *fpath)
 	return (SUCCESS);
 }
 
-void	ll(void)
-{
-	system("leaks -q cub3D");
-}
-
 int	main(int ac, char **av)
 {
 	t_game	game;
 
-	ll();
 	if (ac < 2)
 		return (print_error(NULL, ERR_USAGE), 1);
 	init_game(&game);
