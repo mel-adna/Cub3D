@@ -1,7 +1,7 @@
 # Cub3D Project
 
 **Authors:**  
-- Mohamed El Adnani (mel-adna) — Raycasting & Rendering  
+- Mohamed El Adnani — Raycasting & Rendering  
 - Said Zemmouri — Parsing
 
 ---
@@ -25,7 +25,7 @@ Cub3D is a simple 3D game engine inspired by classic raycasting games like Wolfe
 
 ## My Contribution
 
-I, **Mohamed El Adnani (mel-adna)**, was responsible for the **raycasting and rendering** parts:
+I, **Mohamed El Adnani**, was responsible for the **raycasting and rendering** parts:
 
 - Implemented the raycasting algorithm  
 - Rendered the 3D scene frame by frame using MiniLibX  
